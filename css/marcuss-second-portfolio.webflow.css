@@ -395,7 +395,7 @@ strong {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 40% 60px 60px;
+  padding: 10% 60px 60px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
