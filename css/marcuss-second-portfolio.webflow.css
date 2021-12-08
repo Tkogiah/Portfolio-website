@@ -944,15 +944,15 @@ strong {
   background-color: #c63288;
 }
 
-.social-button.facebook {
-  background-image: url('../images/facebook-white.svg');
+.social-button.github {
+  background-image: url('../images/github-original.svg');
   background-position: 50% 50%;
   background-size: 50%;
   background-repeat: no-repeat;
 }
 
-.social-button.facebook:hover {
-  background-color: #4267b2;
+.social-button.github:hover {
+  background-color: #24417a;
 }
 
 .social-button.pinterest {
@@ -1165,26 +1165,26 @@ strong {
   transition: background-color 1000ms ease;
 }
 
-.navbar-social-button.instagram {
-  background-image: url('../images/instagram-white.svg');
+.navbar-social-button.linkedin {
+  background-image: url('../images/linkedin-original.svg');
   background-position: 50% 50%;
   background-size: 50%;
   background-repeat: no-repeat;
 }
 
-.navbar-social-button.instagram:hover {
-  background-color: #c63288;
+.navbar-social-button.linkedin:hover {
+  background-color: #3849e4;
 }
 
-.navbar-social-button.facebook {
-  background-image: url('../images/facebook-white.svg');
+.navbar-social-button.github {
+  background-image: url('../images/github-original.svg');
   background-position: 50% 50%;
   background-size: 50%;
   background-repeat: no-repeat;
 }
 
-.navbar-social-button.facebook:hover {
-  background-color: #4267b2;
+.navbar-social-button.github:hover {
+  background-color: #e44828;
 }
 
 .separator-links-footer {
