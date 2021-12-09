@@ -1799,7 +1799,7 @@ strong {
     top: 0px;
     height: 80px;
     border-bottom-style: none;
-    background-color: rgba(192, 204, 218, 0.6);
+    background-color: rgba(192, 204, 218, 0.6); */
   }
 
   .dribbble-content {
@@ -1990,7 +1990,7 @@ strong {
   }
 
   .navbar-social-button {
-    display: none;
+    display: display;
   }
 
   .dribbble-content {
@@ -2064,9 +2064,9 @@ strong {
   }
 
   .nav-menu-social {
-    -webkit-flex-wrap: wrap;
+    /* -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
   }
 
   .navbar-button {
