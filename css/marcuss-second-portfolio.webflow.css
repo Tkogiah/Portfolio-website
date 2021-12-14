@@ -1493,6 +1493,7 @@ strong {
     height: 3vw;
     margin-bottom: 2vw;
   }
+  
 
   .grid {
     grid-column-gap: 3vw;
@@ -2172,4 +2173,10 @@ strong {
   font-weight: 400;
   font-style: normal;
   font-display: auto;
+}
+
+
+.liquid {
+  vertical-align: top;
+  padding-left: 1em;
 }
