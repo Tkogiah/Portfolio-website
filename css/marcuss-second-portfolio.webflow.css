@@ -1187,6 +1187,17 @@ strong {
   background-color: #e44828;
 }
 
+.navbar-social-button.youtube{
+  background-image: url('../images/youtube.svg');
+  background-position: 50% 50%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.navbar-social-button.youtube:hover {
+  background-color: #ff0000;
+}
+
 .separator-links-footer {
   width: 1px;
   height: 10px;
