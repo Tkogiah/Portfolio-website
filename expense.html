@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Expense Tracker</title>
+     <link rel="stylesheet" type="text/css" href="styles.css" />
+ </head>
+ <body>
+    <div class='container'>
+
+
+        <div class='overview'>
+            <div class='overview-income'>
+                <h2>Income</h2>
+                <h3 id='overview-income'>$0.00 </h3>
+            </div>
+            <div class='overview-expenses'>
+                <h2>Expenses</h2>
+                <h3 id='overview-expenses'>$0.00 </h3>
+            </div>
+            <div class='overview-balance'>
+                <h2>Balance</h2>
+                <h3 id='overview-balance'>$0.00 </h3>
+            </div>
+        </div>
+
+
+        <div class='tabs'>
+            <div class='tabs-income inactive'>Income</div>
+            <div class='tabs-expenses inactive'>Expenses</div>
+            <div class='tabs-all'>All</div>
+        </div>
+
+
+        <div class='display'>
+
+            <div class='show'>
+                <ul class='list-items' id='display'>
+                </ul>
+            </div>    
+        </div>
+
+
+        
+        <div class='input'>   
+            <div class='description-input'>
+                <input class='description-field' id='description' type='text' placeholder="description">
+            </div>
+            <div class='amount-input'>
+                <input class='amount-field' id='amount' type='number' step="0.01" placeholder="$0.00">
+            </div>
+            <div class='income-input'>
+                <input class='income-btn' name='class' id='income-btn' type='button' value='income'>                            
+            </div>                        
+            <div class='expense-input'>                        
+                <input class='expense-btn' name='class' id='expense-btn' type='button' value='expense'>                            
+            </div>
+        </div>
+          
+          
+    </div>
+    <script src="/js/expense.js"></script>
+ </body>
+ </html>
