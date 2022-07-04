@@ -1,0 +1,862 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  color: white;
+  background-color: black;
+  font-family: 'Tangerine', cursive;
+  font-size: 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: url(/images/board-game/assets/castle.jpg);
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes frozen {
+  0% {
+    -webkit-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    color: white;
+  }
+  2% {
+    -webkit-transform: skewX(15deg);
+            transform: skewX(15deg);
+    color: #cef0ff;
+  }
+  4% {
+    -webkit-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    color: #bae7fc;
+  }
+  6% {
+    -webkit-transform: skewX(15deg);
+            transform: skewX(15deg);
+    color: #aae4ff;
+  }
+  8% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #7ad4fd;
+  }
+  10% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #59cbff;
+  }
+  50% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #59cbff;
+  }
+  80% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #59cbff;
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #59cbff;
+  }
+}
+
+@keyframes frozen {
+  0% {
+    -webkit-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    color: white;
+  }
+  2% {
+    -webkit-transform: skewX(15deg);
+            transform: skewX(15deg);
+    color: #cef0ff;
+  }
+  4% {
+    -webkit-transform: skewX(-15deg);
+            transform: skewX(-15deg);
+    color: #bae7fc;
+  }
+  6% {
+    -webkit-transform: skewX(15deg);
+            transform: skewX(15deg);
+    color: #aae4ff;
+  }
+  8% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #7ad4fd;
+  }
+  10% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #59cbff;
+  }
+  50% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #59cbff;
+  }
+  80% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #59cbff;
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: #59cbff;
+  }
+}
+
+@-webkit-keyframes poisoned {
+  0% {
+    -webkit-transform: skewY(-2deg);
+            transform: skewY(-2deg);
+    color: white;
+  }
+  10% {
+    -webkit-transform: skewX(2deg);
+            transform: skewX(2deg);
+    color: white;
+  }
+  20% {
+    -webkit-transform: skewY(2deg);
+            transform: skewY(2deg);
+    color: #b3ffb3;
+  }
+  30% {
+    -webkit-transform: skewX(-2deg);
+            transform: skewX(-2deg);
+    color: #b3ffb3;
+  }
+  60% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: white;
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: white;
+  }
+}
+
+@keyframes poisoned {
+  0% {
+    -webkit-transform: skewY(-2deg);
+            transform: skewY(-2deg);
+    color: white;
+  }
+  10% {
+    -webkit-transform: skewX(2deg);
+            transform: skewX(2deg);
+    color: white;
+  }
+  20% {
+    -webkit-transform: skewY(2deg);
+            transform: skewY(2deg);
+    color: #b3ffb3;
+  }
+  30% {
+    -webkit-transform: skewX(-2deg);
+            transform: skewX(-2deg);
+    color: #b3ffb3;
+  }
+  60% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: white;
+  }
+  100% {
+    -webkit-transform: skewX(0deg);
+            transform: skewX(0deg);
+    color: white;
+  }
+}
+
+.start {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.start .side-by-side {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  height: auto;
+  color: white;
+  font-size: 80px;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+
+.start .side-by-side .space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.start .side-by-side .choose-your-character {
+  min-width: 200px;
+  min-height: 200px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 50px 10px;
+  color: black;
+  font-size: 40px;
+  text-indent: -9999px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.start .side-by-side .choose-your-character:hover {
+  background-image: none;
+  background-color: white;
+  text-indent: 0px;
+  text-align: center;
+}
+
+.start .side-by-side .archer {
+  background-image: url("/images/board-game/assets/Archer.jpg");
+}
+
+.start .side-by-side .thief {
+  background-image: url("/images/board-game/assets/Thief.jpg");
+}
+
+.start .side-by-side .fighter {
+  background-image: url("/images/board-game/assets/Fighter.png");
+}
+
+#hexboard {
+  max-width: 905px;
+  min-width: 905px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 0px;
+}
+
+.hex {
+  display: inline-block;
+  position: relative;
+  width: 78px;
+  height: 43.87862px;
+  margin: 21.93931px 2px 3.4641px;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #55636e;
+  font: 40px/43.87862px sans-serif;
+  vertical-align: middle;
+}
+
+.hex::before, .hex::after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 53.74012px;
+  height: 53.74012px;
+  background-color: inherit;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleY(0.57735) rotate(-45deg);
+          transform: scaleY(0.57735) rotate(-45deg);
+}
+
+.row-zero {
+  background-color: #c95a00;
+}
+
+.row-one {
+  background-color: #974400;
+}
+
+.row-two {
+  background-color: #6d3100;
+}
+
+.row-three {
+  background-color: #532400;
+}
+
+.row-four {
+  background-color: #2f1500;
+}
+
+.row-five {
+  background-color: #1d0e00;
+}
+
+.hex:hover {
+  background-color: red;
+}
+
+.hex:hover::before, .hex:hover::after {
+  background-color: red;
+}
+
+.take-damage {
+  width: 99.3%;
+  height: 99%;
+  border: 3px solid black;
+  border-radius: 5px;
+  background-color: #c95a00;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.take-damage .modal-option {
+  background-color: saddlebrown;
+  font-size: 16px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.right-of-board {
+  min-width: 905px;
+  width: 49vw;
+  margin-left: 10px;
+  height: 98vh;
+  background-color: #974400;
+  background-image: url(/images/board-game/assets/playmatBG.jpg);
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 15px;
+  text-align: left;
+  border: 1px solid black;
+  position: relative;
+}
+
+.right-of-board .top {
+  min-height: 125px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.right-of-board .top .stats {
+  margin-left: 0px;
+  max-height: 100px;
+  min-width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: bolder;
+}
+
+.right-of-board .top .stats .name {
+  min-width: 200px;
+}
+
+.right-of-board .top .photo {
+  margin-left: 10px;
+  min-width: 125px;
+  max-height: 125px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.right-of-board .top .photo .level {
+  font-size: 20px;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 0;
+  margin-left: 5px;
+}
+
+.right-of-board .top .right-top-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.right-of-board .top .right-top-nav .orbs {
+  margin-left: 10px;
+  min-width: 645px;
+  max-width: 645px;
+  height: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[10];
+      grid-template-columns: repeat(10, 1fr);
+  gap: 5px;
+}
+
+.right-of-board .top .right-top-nav .orbs .orb {
+  font-weight: bolder;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: rgba(220, 20, 60, 0.9);
+}
+
+.right-of-board .top .right-top-nav .pool {
+  margin: 5px 0px 0px 10px;
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.right-of-board .top .right-top-nav .pool .poison, .right-of-board .top .right-top-nav .pool .freeze {
+  margin-top: 20px;
+  font-weight: bolder;
+}
+
+.right-of-board .top .right-top-nav .pool .freeze {
+  -webkit-animation: 1s frozen infinite alternate;
+          animation: 1s frozen infinite alternate;
+}
+
+.right-of-board .top .right-top-nav .pool .poison {
+  -webkit-animation: 2s poisoned infinite alternate;
+          animation: 2s poisoned infinite alternate;
+}
+
+.right-of-board .middle {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 3px solid black;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.right-of-board .middle .player-stats {
+  width: 99%;
+  height: 18%;
+  border-bottom: 1px solid black;
+  text-align: left;
+  font-size: 25px;
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.right-of-board .middle .player-stats .player-stat-width {
+  width: 20%;
+}
+
+.right-of-board .middle .enemy-stats {
+  width: 99%;
+  height: 9.85%;
+  border-bottom: 1px solid black;
+  text-align: left;
+  font-size: 30px;
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.right-of-board .middle .enemy-stats .enemy-stat-width {
+  width: 33%;
+}
+
+.right-of-board .middle .all-stats {
+  width: 99%;
+  border-bottom: 1px solid black;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: black;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.right-of-board .middle .all-stats .all-stat-width {
+  width: 33%;
+}
+
+.right-of-board .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  display: visible;
+}
+
+.right-of-board .bottom .deck {
+  min-height: 175px;
+  min-width: 131.25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: rgba(0, 120, 0, 0.9);
+}
+
+.right-of-board .bottom .discard {
+  min-height: 175px;
+  min-width: 131.25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: rgba(120, 0, 0, 0.9);
+}
+
+.right-of-board .bottom .draw {
+  padding-bottom: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.right-of-board .bottom .actions {
+  height: 175px;
+  min-width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+}
+
+.right-of-board .bottom .actions .hand {
+  margin: 10px 5px;
+  padding: 3px;
+  border: 2px solid black;
+  font-size: 25px;
+  border-radius: 5px;
+  background-color: rgba(22, 22, 122, 0.9);
+}
+
+.right-of-board .bottom .actions .merchant {
+  margin: 10px 5px;
+  padding: 3px;
+  border: 2px solid black;
+  font-size: 25px;
+  border-radius: 5px;
+  background-color: rgba(22, 22, 122, 0.9);
+  text-align: center;
+}
+
+.right-of-board .bottom .actions .end {
+  margin: 10px 5px;
+  padding: 3px;
+  border: 2px solid black;
+  font-size: 25px;
+  border-radius: 5px;
+  background-color: rgba(22, 22, 122, 0.9);
+}
+
+.right-of-board .bottom .board-details {
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+  height: 175px;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: white;
+}
+
+.right-of-board .bottom .board-details .show-enemy {
+  font-size: 30px;
+  margin: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgba(120, 0, 0, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.right-of-board .bottom .board-details .show-player {
+  font-size: 30px;
+  margin: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: rgba(0, 120, 104, 0.9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.right-of-board .modal {
+  position: absolute;
+  height: 550px;
+  width: 905px;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 100;
+  -webkit-transform: translate(0px, -35px);
+          transform: translate(0px, -35px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.right-of-board .hide {
+  display: none;
+}
+
+.right-of-board .modal-card {
+  height: 175px;
+  width: 131.25px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: rgba(120, 82, 0, 0.486);
+  margin-right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.red {
+  background-color: rgba(255, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.yellow {
+  background-color: rgba(255, 200, 0, 0.686);
+  z-index: 1;
+}
+
+.green {
+  background-color: rgba(0, 255, 0, 0.3);
+  z-index: 1;
+}
+
+.blue {
+  background-color: blue;
+  z-index: 1;
+}
+
+.enemy {
+  background-color: purple;
+  z-index: 2;
+}
+
+.hidden {
+  display: none;
+}
+
+.players-lose {
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: black;
+  font-size: large;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.restart {
+  margin-top: 2%;
+  width: 100px;
+  height: 50px;
+  background-color: #b80909;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 3px solid black;
+  border-radius: 3px;
+}
+/*# sourceMappingURL=styles.css.map */

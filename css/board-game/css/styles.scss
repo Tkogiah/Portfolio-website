@@ -1,0 +1,544 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    color: white;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Tangerine', cursive;
+    font-size: 0;
+    text-align: center;
+    display: flex;
+    background-image: url(/images/board-game/assets/castle.jpg);
+    background-repeat: no-repeat;
+    
+  }
+
+
+// ANIMATIONS
+@keyframes frozen {
+    0% { transform: skewX(-15deg); color: white; }
+    2% { transform: skewX(15deg); color: rgb(206, 240, 255); }
+    4% { transform: skewX(-15deg); color: rgb(186, 231, 252); }
+    6% { transform: skewX(15deg); color: rgb(170, 228, 255); }
+    8% { transform: skewX(0deg); color: rgb(122, 212, 253); }
+    10% { transform: skewX(0deg); color: rgb(89, 203, 255); }
+    50% { transform: skewX(0deg); color: rgb(89, 203, 255); }
+    80% { transform: skewX(0deg); color: rgb(89, 203, 255); }
+    100% { transform: skewX(0deg); color: rgb(89, 203, 255); }  
+  }
+  @keyframes poisoned {
+    0% { transform: skewY(-2deg);color: white;}
+    10% { transform: skewX(2deg); color: white;}
+    20% { transform: skewY(2deg); color: rgb(179, 255, 179);}
+    30% { transform: skewX(-2deg);color: rgb(179, 255, 179);}
+    60% { transform: skewX(0deg);color: white;}
+    100% { transform: skewX(0deg); color: rgb(255, 255, 255);}  
+  }
+
+
+//OPENING MODAL
+.start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .side-by-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: auto;
+        color: rgb(255, 255, 255);
+        font-size: 80px;
+        font-weight: 700;
+        padding-bottom: 5px;
+        
+        .space {
+            display: flex;
+            flex-direction: row;
+        }  
+        .choose-your-character {
+            min-width: 200px;
+            min-height: 200px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 50px 10px;
+            color: black;
+            font-size: 40px;
+            text-indent: -9999px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .choose-your-character:hover {
+            background-image: none;
+            background-color: white;
+            text-indent: 0px;
+            text-align: center;  
+        }
+        .archer {
+            background-image: url('/images/board-game/assets/Archer.jpg');
+        }
+        .thief {
+            background-image: url('/images/board-game/assets/Thief.jpg');    
+        }
+        .fighter {
+            background-image: url('/images/board-game/assets/Fighter.png');
+        }
+    }
+}
+
+//HEXBOARD
+  #hexboard {
+    max-width: 905px;
+    min-width: 905px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 0px;
+    
+  }
+  .hex {
+    display: inline-block;
+    position: relative;
+    width: 78px;
+    height: 43.87862px;
+    margin: 21.93931px 2px 3.4641px;
+    color: rgba(255, 255, 255, 0.75);
+    background-color: #55636e;
+    font: 40px/43.87862px sans-serif;
+    vertical-align: middle;
+
+  }
+  .hex::before, .hex::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 53.74012px;
+    height: 53.74012px;
+    background-color: inherit;
+    transform-origin: 0 0;
+    transform: scaleY(0.57735) rotate(-45deg);
+  }
+ 
+
+.row-zero {
+    background-color: rgb(201, 90, 0);
+}
+.row-one {
+    background-color: rgb(151, 68, 0);
+}
+.row-two {
+    background-color: rgb(109, 49, 0);
+}
+.row-three {
+    background-color: rgb(83, 36, 0);
+}
+.row-four {
+    background-color: rgb(47, 21, 0);
+}
+.row-five {
+    background-color: rgb(29, 14, 0);
+}  
+.hex:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.hex:hover::before, .hex:hover::after {
+    background-color: rgb(255, 0, 0);
+
+
+}
+
+.take-damage {
+    width: 99.3%;
+    height: 99%;
+    border: 3px solid black;
+    border-radius: 5px;
+    background-color: rgb(201, 90, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .modal-option {
+        background-color: saddlebrown;
+        font-size: 16px;
+        margin: 10px;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+}
+
+
+//PLAYER DISPLAY MENU
+.right-of-board {
+    min-width: 905px; 
+    width: 49vw;
+    margin-left: 10px;
+    height: 98vh;
+    background-color: rgb(151, 68, 0);
+    background-image: url(/images/board-game/assets/playmatBG.jpg);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    font-size: 15px;
+    text-align: left;
+    border: 1px solid black;
+    position: relative;
+
+    .top {
+        min-height: 125px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        font-size: 25px;
+        padding-bottom: 10px;
+        .stats {
+            margin-left: 0px;
+            max-height: 100px;
+            min-width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-weight: bolder;
+            .name {
+                min-width: 200px;
+            }
+            .damage {
+            }
+            .range {
+
+            }
+            .speed {
+            }
+            .money {
+                
+            }
+
+        }
+        .photo {
+            margin-left: 10px;
+            min-width: 125px;
+            max-height: 125px;
+            background-color: white;
+            
+            background-repeat: no-repeat;
+            background-size: cover;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            
+            
+            .level {
+                font-size: 20px;
+                font-weight: bolder;
+                position: absolute;
+                bottom: 0;
+                margin-left: 5px;
+
+            }
+        }
+
+        .right-top-nav {
+            display: flex;
+            flex-direction: column;
+            .orbs {
+                margin-left: 10px;
+                min-width: 645px;
+                max-width: 645px;
+                height: 30px;
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+                gap: 5px;
+    
+                .orb {
+                    font-weight: bolder;
+                    text-align: center;
+                    border: 2px solid black;
+                    border-radius: 5px;
+                    padding: 3px;
+                    background-color: rgba(220, 20, 60, 0.9);
+                }
+            }
+            .pool {
+                margin: 5px 0px 0px 10px;
+                font-size: 30px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                .poison, .freeze {
+                    margin-top: 20px;
+                    font-weight: bolder;    
+                }
+                .freeze {
+                    animation: 1s frozen infinite alternate;
+                }
+                .poison {
+                    animation: 2s poisoned infinite alternate;
+                }
+
+            }
+        }
+        
+    }
+
+    .middle {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 20px;
+        border: 3px solid black;
+        
+        background-color: rgba(255, 255, 255, .9);
+
+        .player-stats {
+            width: 99%;
+            height: 18%;
+            border-bottom: 1px solid black;
+            text-align: left;
+            font-size: 25px;
+            padding-left: 10px;
+            display: flex;
+            color: black;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            
+            .player-stat-width {
+                width: 20%;
+            }
+        }
+        .enemy-stats {
+            width: 99%;
+            height: 9.85%;
+            border-bottom: 1px solid black;
+            text-align: left;
+            font-size: 30px;
+            padding-left: 10px;
+            display: flex;
+            color: black;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            
+            .enemy-stat-width {
+                width: 33%;
+            }
+            
+            
+        }
+        .all-stats {
+            width: 99%;
+            
+            border-bottom: 1px solid black;
+            text-align: left;
+            padding-left: 10px;
+            font-size: 30px;
+            display: flex;
+            color: black;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+          
+            .all-stat-width {
+                width: 33%;
+            }
+        } 
+    }
+    
+
+    
+    .bottom {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        display: visible;
+
+        @mixin cardstats {
+            min-height: 175px;
+            min-width: 131.25px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-right: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+        }
+        .deck {
+            @include cardstats;
+            background-color: rgba(0, 120, 0, 0.9);
+    
+        }
+        .discard {
+            @include cardstats;
+            background-color: rgba(120, 0, 0, 0.9);
+        }
+        .draw {
+            padding-bottom: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            
+        }
+        .actions {
+            height: 175px;
+            min-width: 100px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+
+            @mixin actions {
+                margin: 10px 5px;
+                padding: 3px;
+                border: 2px solid black;
+                font-size: 25px;
+                border-radius: 5px;
+                background-color: rgba(22, 22, 122, 0.9);
+            }
+            .hand {
+                @include actions
+            }
+            .merchant {
+                @include actions;
+                text-align: center;
+            }
+            .end {
+                @include actions 
+            }
+            
+        }
+
+        .board-details {
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5px;
+            height: 175px;
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: white;
+            
+            @mixin toggle {
+                font-size: 30px;
+                margin: 3px;
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+            .show-enemy {
+                @include toggle;
+                background-color: rgba(120, 0, 0, 0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .show-player {
+                @include toggle;
+                background-color: rgba(0, 120, 104, 0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            // .active {
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            //     @include toggle;
+            //     background-color: rgba(120, 118, 0, 0.9);
+            // }
+            
+        }
+    }
+    //MODAL
+    .modal {
+        position: absolute;
+        height: 550px;
+        width: 905px;
+        border: 3px solid black;
+        border-radius: 10px;
+        background-color: white;
+        z-index: 100;
+        transform: translate(0px, -35px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .hide {
+        display: none;
+    }
+    .modal-card {
+        height: 175px;
+        width: 131.25px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: rgba(120, 82, 0, 0.486);
+        margin-right: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.red {
+    background-color: rgba(255, 0, 0, 0.300);
+    z-index: 1;
+}
+.yellow {
+    background-color: rgba(255, 200, 0, 0.686);
+    z-index: 1;
+}
+.green {
+    background-color: rgba(0, 255, 0, 0.3);
+    z-index: 1
+}
+.blue {
+    background-color: rgba(0, 0, 255, 1);
+    z-index: 1
+}
+.enemy {
+    background-color: purple;
+    z-index: 2
+}
+.hidden {
+    display: none;
+}
+
+.players-lose {
+    width: 100%;
+    height: 100%;  
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    font-size: large;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.restart {
+    margin-top: 2%;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(184, 9, 9);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: 3px;
+}
