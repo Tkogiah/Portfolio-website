@@ -1872,7 +1872,7 @@ strong {
   }
 
   .about-card {
-    height: 70vh;
+    height: auto;
     padding: 15px;
     -webkit-box-pack: end;
     -webkit-justify-content: flex-end;
